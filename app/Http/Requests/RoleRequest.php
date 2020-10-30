@@ -8,7 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-class GenreRequest extends FormRequest
+class RoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,9 @@ class GenreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:3|max:255|unique:genres',
+            'name' => 'required|string|min:3|max:255',
+            'movie_id' => 'required|uuid|exists:movies,id',
+            'actor_id' => 'required|uuid|exists:actors,id'
         ];
     }
 

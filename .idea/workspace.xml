@@ -19,21 +19,52 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b15d70d5-a856-41a8-a294-049c6f523caa" name="Default Changelist" comment="feat: first commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b15d70d5-a856-41a8-a294-049c6f523caa" name="Default Changelist" comment="feat: added Movie/Role/Actor CRUD api and feature tests; Fixed Genre routes and methods">
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ActorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ActorRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/MovieRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/RoleRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Actor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Movie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Actor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ActorFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MovieFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/RoleFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_28_191728_create_movie_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_28_191815_create_actors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_28_193530_create_roles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ActorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/GenreTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/MoviesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/RoleTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GenreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GenreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/GenreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/GenreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/GenreFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GenreFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="127.0.0.1" id="7a3bc913-f199-4b0d-bb20-4b3770698967" name="127.0.0.1" port="8000" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -146,17 +177,79 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Feature" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Feature" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.GenreTest">
+    <configuration name="ActorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4 Brew" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActorTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActorTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenreTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4 Brew" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\GenreTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GenreTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenreTest.testStoreSuccess" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4 Brew" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\GenreTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GenreTest.php" method="testStoreSuccess" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenreTest.testUpdateFailure" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4 Brew" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\GenreTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GenreTest.php" method="testUpdateFailure" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenreTest.testUpdateSuccess" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4 Brew" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\GenreTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GenreTest.php" method="testUpdateSuccess" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.GenreTest" />
+        <item itemvalue="PHPUnit.GenreTest.testUpdateFailure" />
+        <item itemvalue="PHPUnit.GenreTest.testUpdateSuccess" />
+        <item itemvalue="PHPUnit.ActorTest" />
+        <item itemvalue="PHPUnit.GenreTest.testStoreSuccess" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b15d70d5-a856-41a8-a294-049c6f523caa" name="Default Changelist" comment="" />
@@ -165,6 +258,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603821447084</updated>
       <workItem from="1603821448319" duration="313000" />
+      <workItem from="1604093835379" duration="983000" />
+      <workItem from="1604096585457" duration="4556000" />
     </task>
     <task id="LOCAL-00001" summary="feat: first commit">
       <created>1603821627147</created>
@@ -177,7 +272,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -189,15 +284,127 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: first commit" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="299" y="23" key="#ActorTest" timestamp="1604099528210">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#ActorTest/0.23.1280.722@0.23.1280.722" timestamp="1604099528210" />
+    <state x="299" y="23" key="#GenreTest" timestamp="1604098768800">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#GenreTest.testStoreFailure" timestamp="1604098965488">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#GenreTest.testStoreFailure/0.23.1280.722@0.23.1280.722" timestamp="1604098965488" />
+    <state x="299" y="23" key="#GenreTest.testStoreSuccess" timestamp="1604099463348">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#GenreTest.testStoreSuccess/0.23.1280.722@0.23.1280.722" timestamp="1604099463348" />
+    <state x="299" y="23" key="#GenreTest.testUpdateFailure" timestamp="1604101385643">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#GenreTest.testUpdateFailure/0.23.1280.722@0.23.1280.722" timestamp="1604101385643" />
+    <state x="299" y="23" key="#GenreTest.testUpdateSuccess" timestamp="1604100998381">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#GenreTest.testUpdateSuccess/0.23.1280.722@0.23.1280.722" timestamp="1604100998381" />
+    <state x="299" y="23" key="#GenreTest/0.23.1280.722@0.23.1280.722" timestamp="1604098768800" />
+    <state x="299" y="23" key="#MoviesTest" timestamp="1604094316440">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#MoviesTest/0.23.1280.722@0.23.1280.722" timestamp="1604094316440" />
+    <state x="299" y="23" key="#RoleTest" timestamp="1604094335912">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="299" y="23" key="#RoleTest/0.23.1280.722@0.23.1280.722" timestamp="1604094335912" />
+    <state x="378" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604100289397">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="378" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.722@0.23.1280.722" timestamp="1604100289397" />
+    <state x="403" y="94" key="#xdebugger.evaluate" timestamp="1604099010912">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="403" y="94" key="#xdebugger.evaluate/0.23.1280.722@0.23.1280.722" timestamp="1604099010912" />
+    <state width="1238" height="179" key="GridCell.Tab.0.bottom" timestamp="1604101385936">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="179" key="GridCell.Tab.0.bottom/0.23.1280.722@0.23.1280.722" timestamp="1604101385936" />
+    <state width="1238" height="179" key="GridCell.Tab.0.center" timestamp="1604101385935">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="179" key="GridCell.Tab.0.center/0.23.1280.722@0.23.1280.722" timestamp="1604101385935" />
+    <state width="1238" height="179" key="GridCell.Tab.0.left" timestamp="1604101385935">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="179" key="GridCell.Tab.0.left/0.23.1280.722@0.23.1280.722" timestamp="1604101385935" />
+    <state width="1238" height="179" key="GridCell.Tab.0.right" timestamp="1604101385936">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="179" key="GridCell.Tab.0.right/0.23.1280.722@0.23.1280.722" timestamp="1604101385936" />
+    <state width="1238" height="165" key="GridCell.Tab.1.bottom" timestamp="1604101256852">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.1.bottom/0.23.1280.722@0.23.1280.722" timestamp="1604101256852" />
+    <state width="1238" height="165" key="GridCell.Tab.1.center" timestamp="1604101256851">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.1.center/0.23.1280.722@0.23.1280.722" timestamp="1604101256851" />
+    <state width="1238" height="165" key="GridCell.Tab.1.left" timestamp="1604101256851">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.1.left/0.23.1280.722@0.23.1280.722" timestamp="1604101256851" />
+    <state width="1238" height="165" key="GridCell.Tab.1.right" timestamp="1604101256852">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.1.right/0.23.1280.722@0.23.1280.722" timestamp="1604101256852" />
+    <state width="1238" height="165" key="GridCell.Tab.2.bottom" timestamp="1604101256855">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.2.bottom/0.23.1280.722@0.23.1280.722" timestamp="1604101256855" />
+    <state width="1238" height="165" key="GridCell.Tab.2.center" timestamp="1604101256854">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.2.center/0.23.1280.722@0.23.1280.722" timestamp="1604101256854" />
+    <state width="1238" height="165" key="GridCell.Tab.2.left" timestamp="1604101256853">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.2.left/0.23.1280.722@0.23.1280.722" timestamp="1604101256853" />
+    <state width="1238" height="165" key="GridCell.Tab.2.right" timestamp="1604101256854">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="1238" height="165" key="GridCell.Tab.2.right/0.23.1280.722@0.23.1280.722" timestamp="1604101256854" />
     <state x="496" y="300" key="Vcs.Push.Dialog.v2" timestamp="1603821751305">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="496" y="300" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1603821751305" />
+    <state width="640" height="361" key="XDebugger.FullValuePopup" timestamp="1604099000211">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state width="640" height="361" key="XDebugger.FullValuePopup/0.23.1280.722@0.23.1280.722" timestamp="1604099000211" />
+    <state x="305" y="172" key="run.anything.popup" timestamp="1604099779314">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="305" y="172" key="run.anything.popup/0.23.1280.722@0.23.1280.722" timestamp="1604099779314" />
+    <state x="305" y="69" width="670" height="676" key="search.everywhere.popup" timestamp="1604098174278">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="305" y="69" width="670" height="676" key="search.everywhere.popup/0.23.1280.722@0.23.1280.722" timestamp="1604098174278" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Feature/GenreTest.php</url>
+          <line>68</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Traits\HasFetchAllRenderCapabilities;
-use App\Http\Requests\GenreRequest;
-use App\Models\Genre;
+use App\Http\Requests\MovieRequest;
+use App\Models\Movie;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class GenreController extends Controller
+class MovieController extends Controller
 {
 
     use HasFetchAllRenderCapabilities;
@@ -22,7 +22,7 @@ class GenreController extends Controller
      */
     public function index(Request $request)
     {
-        $this->setGetAllBuilder(Genre::query());
+        $this->setGetAllBuilder(Movie::query());
         $this->setGetAllOrdering('name', 'asc');
         $this->parseRequestConditions($request);
         return new ResourceCollection($this->getAll()->paginate());
@@ -31,15 +31,15 @@ class GenreController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @param GenreRequest $request
-     * @return \App\Http\Resources\Genre
+     * @param MovieRequest $request
+     * @return \App\Http\Resources\Movie
      */
-    public function store(GenreRequest $request)
+    public function store(MovieRequest $request)
     {
-        $genre = new Genre($request->validated());
-        $genre->save();
+        $movie = new Movie($request->validated());
+        $movie->save();
 
-        return new \App\Http\Resources\Genre($genre);
+        return new \App\Http\Resources\Movie($movie);
     }
 
     /**
@@ -51,29 +51,29 @@ class GenreController extends Controller
     public function show($id)
     {
         try {
-            $genre = Genre::findOrFail($id);
+            $movie = Movie::findOrFail($id);
         } catch (ModelNotFoundException $e){
             return response()->json([], 404);
         }
 
-        return new \App\Http\Resources\Genre($genre);
+        return new \App\Http\Resources\Movie($movie);
     }
 
     /**
      * Update the specified resource in storage.
      *
+     * @param MovieRequest $request
      * @param $id
-     * @param GenreRequest $request
-     * @return \App\Http\Resources\Genre
+     * @return \App\Http\Resources\Movie
      */
-    public function update(GenreRequest $request, $id)
+    public function update(MovieRequest $request, $id)
     {
-        $genre = Genre::findOrFail($id);
+        $movie = Movie::findOrFail($id);
 
-        $genre->fill($request->validated());
-        $genre->save();
+        $movie->fill($request->validated());
+        $movie->save();
 
-        return new \App\Http\Resources\Genre($genre);
+        return new \App\Http\Resources\Movie($movie);
     }
 
     /**
@@ -85,9 +85,9 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        $genre = Genre::findOrFail($id);
+        $movie = Movie::findOrFail($id);
 
-        $genre->delete();
+        $movie->delete();
 
         return response()->json();
     }
